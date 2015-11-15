@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.*;
  * @author Anthony DeDominic
  */
 @Controller
-public class ReportResouceController {
+public class ReportController {
 
-	@RequestMapping("/report/{id}",method=RequestMethod.GET)
+	@RequestMapping(value="/report/{id}",method=RequestMethod.GET)
 	public String report(@PathVariable String id) {
 		return "report";
 	}

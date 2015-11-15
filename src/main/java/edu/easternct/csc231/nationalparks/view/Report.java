@@ -1,5 +1,7 @@
 package edu.easternct.csc231.nationalparks.view;
 
+import java.util.List;
+
 /**
  * Report View Object
  *
