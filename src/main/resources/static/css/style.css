@@ -1,0 +1,7 @@
+.inline-boxes {
+    display: inline-block;
+    width: 450px;
+    height: 200px;
+    margin: 1px;
+    border: 1px solid black;  
+}

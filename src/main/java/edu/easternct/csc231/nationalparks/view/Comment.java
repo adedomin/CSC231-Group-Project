@@ -14,7 +14,7 @@ public class Comment {
 	public int rating;
 
 	/**
-	 * empty constructor
+	 *
 	 */
 	public Comment() {
 	}
@@ -66,7 +66,7 @@ public class Comment {
 	}
 
 	/**
-	 * @param rating the rating
+	 * @param rating the rating to set
 	 */
 	public void setRating(int rating) {
 		this.rating = rating;
