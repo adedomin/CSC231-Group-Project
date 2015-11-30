@@ -1,5 +1,8 @@
 package edu.easternct.csc231.nationalparks.models;
 
+/**
+ * Address class describing a location
+ */
 public class Address {
 
 	private String street;

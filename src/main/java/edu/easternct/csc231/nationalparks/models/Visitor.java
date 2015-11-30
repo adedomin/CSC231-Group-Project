@@ -3,6 +3,9 @@ package edu.easternct.csc231.nationalparks.models;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+/**
+ * A visitor of a national park
+ */
 @Document
 public class Visitor extends Person {
 

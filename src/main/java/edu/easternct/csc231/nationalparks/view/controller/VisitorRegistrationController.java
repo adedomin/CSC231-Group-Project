@@ -23,6 +23,9 @@ public class VisitorRegistrationController {
 
 	/**
 	 * Return a form for a user to complete
+	 * <p>
+	 * For visitor registration
+	 * </p>
 	 *
 	 * @param model the visitor object
 	 */
@@ -33,9 +36,21 @@ public class VisitorRegistrationController {
 	}
 
 	/**
-	 * take form data deserialize to Visitor and save
+	 * take form data deserialize
+	 * to a visitor object and save it
+	 * <p>
+	 * Also sets user's session
+	 * to reflect the database id
+	 * of the visitor object saved
+	 * </p>
+	 * <p>
+	 * this feature to allow the user
+	 * to making Rating Registrations
+	 * for other parks
+	 * </p>
 	 *
 	 * @param visitor the visitor from form data
+	 * @param session the session object for the user
 	 */
 	@RequestMapping(value="/register",method=RequestMethod.POST)
 	public String registerPost(@ModelAttribute Visitor visitor, HttpSession session) {

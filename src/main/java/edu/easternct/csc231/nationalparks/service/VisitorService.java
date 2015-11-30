@@ -9,7 +9,8 @@ import edu.easternct.csc231.nationalparks.models.Visitor;
 import edu.easternct.csc231.nationalparks.repository.VisitorRepo;
 
 /**
- * Visitor database interactions
+ * db transtactions needed
+ * for Visitor objects
  *
  * @author Anthony DeDominic
  */

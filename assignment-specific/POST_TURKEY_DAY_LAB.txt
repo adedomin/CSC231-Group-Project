@@ -1,0 +1,160 @@
+---- JAVA PSEUDO CODE ----
+
+Service NationalParkService
+
+	findAll() {
+		
+		let parks := []
+		for every park in NationalParkRepo
+			append park to parks
+
+		return parks
+	}
+
+// when user requests "GET /" call this
+@Register Controller to url path "/"
+Controller indexController(Model model)
+
+	GET req:
+
+		parks := NationalParkService has a findAll()
+
+		add parks to model with key "parks"
+
+		index := render index.html with model
+
+		return index
+
+Controller VisitorRegistrationController
+
+	GET:
+
+		add new Visitor object to model with key "visitor"
+		visitor_form = render forms/registration.html using model
+
+		return visitor_form
+
+	POST (visitor):
+
+		VisitorService.saveVisitor visitor
+
+		set session attribute with key "visitorId" with value of visitor
+
+		redirect user to url "/"
+
+Controller RatingRegistrationController
+
+	GET (parkId):
+
+		add a model attribute with key ""
+		add a model attribute with key "park" with value parkId
+		
+		return render forms/rate-park.html using model
+	
+	POST (registration, parkId):
+
+		registration.visitorId := get session value with key "visitorId"
+		registration.parkId := parkId
+
+		redirect user to url "/"
+
+Object RatingReport (registrations)
+	
+		// average of ALL the sites
+		avgRating := findAverageRating(registrations)
+		// get average of all sites
+		// return the site with the lowest average
+		lowestRatedSite := findLowestRated(registrations)
+		// get average of all individual sites
+		// return the site with the highest average
+		highestRatedSite := findHighestRated(registrations)
+		// sort registration ratings
+		sort(registrations)
+
+Object VisitorReport (visitors)
+
+	sort (visitors)
+
+Controller ReportController
+
+	FOR RATING REPORT
+	GET (parkId):
+		
+		registrations := get all registrations from RegistrationService
+
+		set model attribute with key "report" with value new RatingReport(registrations)
+
+		return render rating-report.html with model
+
+	FOR VISITOR REPORT
+	GET (parkId):
+
+		// get all registrations
+		registrations := get all registrations from RegistrationService
+		
+		// only need registrations yesterday
+		registrations := filter out all registrations that did not fall on the date of yesterday
+
+		visitors := []
+		for each registration in registrations
+			visitor := get visitor from VisitorService.findById(registration.visitorId)
+
+		set model attribute with key "report" with value new VisitorReport(visitors)
+
+		return render visitor-report.html with model
+
+--- TEMPLATE LOGIC PSEUDO CODE ----
+
+index.html
+
+	for each park in parks
+
+		create a div with
+
+			TITLE := park.name
+
+			button with link to Rating Report for park
+
+			button with link to Visitor Report for park
+
+			button to create rating report for park
+
+rating-report.html
+
+	set title to Park name
+
+	set left text under title to best rated park
+
+	set right text under title to worst park
+
+	set text under above to park's average rating
+
+	for every comment in the report object
+
+		create a new div which contains
+
+			visitor's full name
+
+			date of creation
+
+			which registration site
+
+			body of comment
+
+visitor-report.html
+
+	set title to park name
+
+	set text to indicate number of displayed visitors
+
+	for every visitor in report
+
+		create table row with
+
+			unique id of the visitor
+
+			first name
+
+			last name
+
+			a link to more info of the visitor

@@ -23,14 +23,17 @@ public class RatingRegistrationController {
 	public RegistrationService registrationService;
 	public NationalParkService nationalParkService;
 
+	/**
+	 * @param registrationService
+	 * @param nationalParkService
+	 */
 	@Autowired
-	public RatingRegistrationController(
-			RegistrationService registrationService,
+	public RatingRegistrationController(RegistrationService registrationService,
 			NationalParkService nationalParkService) {
-
 		this.registrationService = registrationService;
 		this.nationalParkService = nationalParkService;
 	}
+
 
 	/**
 	 * return Registration form
@@ -48,6 +51,7 @@ public class RatingRegistrationController {
 
 	/**
 	 * Take registeration form
+	 * and save the information provided
 	 *
 	 * @param registration the user submitted data
 	 * @param id the park id

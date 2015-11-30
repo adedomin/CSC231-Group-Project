@@ -1,5 +1,9 @@
 package edu.easternct.csc231.nationalparks.models;
 
+/**
+ * Contact class describing
+ * how to contact something
+ */
 public class Contact {
 
 	private String phone;

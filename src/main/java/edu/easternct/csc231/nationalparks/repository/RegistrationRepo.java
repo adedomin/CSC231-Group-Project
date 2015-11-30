@@ -7,7 +7,9 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import edu.easternct.csc231.nationalparks.models.Registration;
 
 /**
- * Persistent storage of registration
+ * CRUD repo for all Registrations
+ *
+ * @author Anthony DeDominic
  */
 public interface RegistrationRepo extends MongoRepository<Registration, String> {
 

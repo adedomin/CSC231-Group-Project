@@ -1,10 +1,13 @@
 package edu.easternct.csc231.nationalparks.models;
 
-import java.util.List;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+/**
+ * Describes a national park
+ * which contains things like
+ * name, location, etc
+ */
 @Document
 public class NationalPark {
 

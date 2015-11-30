@@ -1,5 +1,9 @@
 package edu.easternct.csc231.nationalparks.models;
 
+/**
+ * object describing people
+ * mainly visitors and park rangers
+ */
 public class Person {
 
 	protected String first;

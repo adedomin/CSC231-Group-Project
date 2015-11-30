@@ -20,16 +20,29 @@ public class NationalParkController {
 	@Autowired
 	private NationalParkService nationalParkService;
 
+	/**
+	 * Create new park
+	 *
+	 * @param park the deserialized park
+	 */
 	@RequestMapping(value="/api/v1/national-park/new",method=RequestMethod.POST)
 	public void insertPark(@RequestBody NationalPark park){
 		nationalParkService.savePark(park);
 	}
 	
+	/**
+	 * @param id the park id
+	 * @return the national park requested
+	 */
 	@RequestMapping(value="/api/v1/national-park/get/{id}",method=RequestMethod.GET)
 	public NationalPark getPark(@PathVariable String id) {
 		return nationalParkService.findById(id);	
 	}
 
+	/**
+	 * @return all national parks 
+	 *         saved in the db
+	 */
 	@RequestMapping(value="/api/v1/national-park/get/all",method=RequestMethod.GET)
 	public List<NationalPark> getAllParks() {
 		return nationalParkService.findAll();	

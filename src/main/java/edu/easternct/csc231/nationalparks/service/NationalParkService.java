@@ -9,7 +9,8 @@ import edu.easternct.csc231.nationalparks.models.NationalPark;
 import edu.easternct.csc231.nationalparks.repository.NationalParkRepo;
 
 /**
- * Implementation of NationalParkService
+ * All db transactions needed
+ * for NationalParks objects
  *
  * @author Anthony DeDominic
  */

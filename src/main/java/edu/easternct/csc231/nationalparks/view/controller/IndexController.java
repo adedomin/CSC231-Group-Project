@@ -18,6 +18,9 @@ public class IndexController {
 	@Autowired
 	private NationalParkService nationalParkService;
 
+	/**
+	 * Returns front page of app
+	 */
 	@RequestMapping(value="/",method=RequestMethod.GET)
 	public String index(Model model) {
 		model.addAttribute("parks", nationalParkService.findAll());

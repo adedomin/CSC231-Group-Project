@@ -5,6 +5,11 @@ import java.util.Date;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+/**
+ * A visitor fills this out
+ * describes how the user felt
+ * about a particular site in a park
+ */
 @Document
 public class Registration {
 
