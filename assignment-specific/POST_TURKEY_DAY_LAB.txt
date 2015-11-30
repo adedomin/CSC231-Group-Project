@@ -17,21 +17,21 @@ Controller indexController(Model model)
 		index := render index.html with model
 
 		return index
+
 @Register Controller to url path “/register”
 Controller VisitorRegistrationController
 
 	GET:
 
 		add new Visitor object to model with key "visitor"
-		visitor_form = render forms/registration.html using model
 
-		return visitor_form
+		return render forms/registration.html using model
 
 	POST (visitor):
 
 		VisitorService.saveVisitor visitor
 
-		set session attribute with key "visitorId" with value of visitor
+		set session attribute with key "visitorId" with value of visitor.id
 
 		redirect user to url "/"
 
@@ -40,15 +40,17 @@ Controller RatingRegistrationController
 
 	GET (parkId):
 
-		add a model attribute with key ""
+		add a model attribute with key "registration" with value new Registration()
 		add a model attribute with key "park" with value parkId
 		
 		return render forms/rate-park.html using model
 	
 	POST (registration, parkId):
 
-		registration.visitorId := get session value with key "visitorId"
+		registration.visitorId := get session value associated key "visitorId"
 		registration.parkId := parkId
+
+		RegistrationService.saveRegistration registration
 
 		redirect user to url "/"
 
@@ -112,15 +114,15 @@ index.html
 
 			button with link to Visitor Report for park
 
-			button to create rating report for park
+			button to create rating registration for park
 
 rating-report.html
 
 	set title to Park name
 
-	set left text under title to best rated park
+	set left text under title to best rated site
 
-	set right text under title to worst park
+	set right text under title to worst rated site
 
 	set text under above to park's average rating
 
@@ -128,7 +130,7 @@ rating-report.html
 
 		create a new div which contains
 
-			visitor's full name
+			commenter's full name
 
 			date of creation
 
