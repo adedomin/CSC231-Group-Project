@@ -11,8 +11,9 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class ReportController {
 
-	@RequestMapping(value="/report/{id}",method=RequestMethod.GET)
-	public String report(@PathVariable String id) {
-		return "report";
+	@RequestMapping(value="/report/{type}/{id}",method=RequestMethod.GET)
+	public String report(@PathVariable String id,
+						 @PathVariable String type) {
+		return "index";
 	}
 }

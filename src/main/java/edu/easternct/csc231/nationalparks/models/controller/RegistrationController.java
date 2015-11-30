@@ -21,7 +21,7 @@ public class RegistrationController {
 	private RegistrationService registrationService;
 
 	@RequestMapping(value="/api/v1/registration/new",method=RequestMethod.POST)
-	public void insertRegistration(@RequestBody Registration registration){
+	public void insertRegistration(@RequestBody Registration registration) {
 		registrationService.saveRegistration(registration);
 	}
 	

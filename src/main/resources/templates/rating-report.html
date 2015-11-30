@@ -1,0 +1,42 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title th:text="'Report For ' + ${report.name}">Report</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link href="../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
+	<link href="../static/css/bootstrap-theme.min.css" th:href="@{/css/bootstrap-theme.min.css}" rel="stylesheet"/>
+	<link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet"/>
+</head>
+<body>
+	<div th:include="partials/header"></div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<h1 class="text-center" th:text="${report.name}">Park Name</h1>
+				<p class="text-right">
+					<span style="float: left">Best Registration Site: <span th:text="${report.bestSite}">a site</span></span>
+					Worst Registration Site: <span th:text="${report.worstSite}">worst site</span>
+				</p>
+				<p>
+					Overall rating: <span th:text="${report.rating}">5</span>
+				</p>
+				<div>
+					<div th:each="rating : ${report.ratings}">
+						<h3 th:text="${rating.name + ' - ' + rating.rating}">Site name</h3>
+						<p class="text-right">
+							<span style="float: left" th:text="${rating.visitorId}">visitor</span>
+							<span th:text="${rating.date}">a date</span>
+						</p>
+						<p class="text-justify" th:text="${rating.comment}">
+							a comment
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div th:include="partials/footer"></div>
+</body>
+</html>

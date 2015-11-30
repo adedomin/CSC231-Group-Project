@@ -11,7 +11,6 @@ import edu.easternct.csc231.nationalparks.repository.VisitorRepo;
 /**
  * Visitor database interactions
  *
- * @see VisitorService
  * @author Anthony DeDominic
  */
 @Service

@@ -11,7 +11,6 @@ import edu.easternct.csc231.nationalparks.repository.RegistrationRepo;
 /**
  * Implementation of RegistrationService
  *
- * @see RegistrationService
  * @author Anthony DeDominic
  */
 @Service

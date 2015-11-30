@@ -6,6 +6,9 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 import edu.easternct.csc231.nationalparks.models.Registration;
 
+/**
+ * Persistent storage of registration
+ */
 public interface RegistrationRepo extends MongoRepository<Registration, String> {
 
 	public List<Registration> findAllByParkId(String id);
