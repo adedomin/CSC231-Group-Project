@@ -1,15 +1,8 @@
+﻿By Anthony DeDominic
+
 ---- JAVA PSEUDO CODE ----
 
 Service NationalParkService
-
-	findAll() {
-		
-		let parks := []
-		for every park in NationalParkRepo
-			append park to parks
-
-		return parks
-	}
 
 // when user requests "GET /" call this
 @Register Controller to url path "/"
@@ -17,14 +10,14 @@ Controller indexController(Model model)
 
 	GET req:
 
-		parks := NationalParkService has a findAll()
+		parks := get all parks from NationalParkService
 
 		add parks to model with key "parks"
 
 		index := render index.html with model
 
 		return index
-
+@Register Controller to url path “/register”
 Controller VisitorRegistrationController
 
 	GET:
@@ -42,6 +35,7 @@ Controller VisitorRegistrationController
 
 		redirect user to url "/"
 
+@Register Controller to url path “/rate-park/{parkId}”
 Controller RatingRegistrationController
 
 	GET (parkId):
@@ -75,6 +69,7 @@ Object VisitorReport (visitors)
 
 	sort (visitors)
 
+@Register Controller to url path “/report/{type}/{parkId}”
 Controller ReportController
 
 	FOR RATING REPORT
