@@ -11,7 +11,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
  * about a particular site in a park
  */
 @Document
-public class Registration {
+public class Registration implements Comparable<Registration>{
 
 	@Id
 	private String id;
@@ -47,6 +47,45 @@ public class Registration {
 		this.onCloud = onCloud;
 		this.comment = comment;
 		this.rating = rating;
+	}
+
+	/**
+	 * checks if db id is equal
+	 * no db id, then return false
+	 */
+	public boolean equals(Registration registration) {
+		
+		if (this.id == null || registration.getId() == null) {
+			return false;
+		}
+
+		return this.id.equals(registration.getId());
+	}
+
+	/**
+	 * <p>
+	 * compare by date
+	 * </p>
+	 * <p>
+	 * then compare by site
+	 * </p>
+	 * <p>
+	 * then compare by rating
+	 * </p>
+	 */
+	public int compareTo(Registration registration) {
+			
+		if (this.date.compareTo(registration.getDate()) == 0) {
+			if (this.name.compareTo(registration.getName()) == 0) {
+				return Integer.compare(this.rating,registration.getRating());
+			}
+			else {
+				return this.name.compareTo(registration.getName());
+			}
+		}
+		else {
+			return this.date.compareTo(registration.getDate());
+		}
 	}
 
 	/**

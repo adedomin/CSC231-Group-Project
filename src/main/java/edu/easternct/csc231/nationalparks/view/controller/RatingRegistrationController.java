@@ -76,6 +76,7 @@ public class RatingRegistrationController {
 		registration.setOnCloud(true);
 		registration.setVisitorId((String)session.getAttribute("visitorId"));
 		registration.setParkId(id);
+		registration.setId(null);
 		registrationService.saveRegistration(registration);
 		return "redirect:/";
 	}

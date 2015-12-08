@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
  * A visitor of a national park
  */
 @Document
-public class Visitor extends Person {
+public class Visitor extends Person implements Comparable<Person> {
 
 	@Id
 	private String id;
@@ -30,6 +30,29 @@ public class Visitor extends Person {
 		super(first, last, address, contact);
 		this.parkId = parkId;
 	}
+
+	/**
+	 * if no db id, use superclass's
+	 * equals, else return if db id is equal
+	 */
+	public boolean equals(Visitor visitor) {
+		
+		if (this.id == null || visitor.getId() == null) {
+			return super.equals(visitor);
+		}
+
+		return this.id.equals(visitor.getId());
+	}
+
+	/**
+	 * use super class to sort,
+	 * nothing to do
+	 */
+	public int compareTo(Person visitor) {
+		
+		return super.compareTo(visitor);
+	}
+
 	/**
 	 * @return the id
 	 */

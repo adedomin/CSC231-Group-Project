@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import edu.easternct.csc231.nationalparks.models.NationalPark;
 import edu.easternct.csc231.nationalparks.models.Registration;
@@ -14,6 +15,7 @@ import edu.easternct.csc231.nationalparks.view.VisitorReport;
 /**
  * returns a new RatingReport or VisitorReport object
  */
+@Service
 public class ReportGenerationService {
 
 	public NationalParkService nationalParkService;
@@ -55,6 +57,10 @@ public class ReportGenerationService {
 		return new RatingReport(registrations,nationalPark.getName());
 	}
 
+	/**
+	 * @param registrations all registrations for park
+	 * @return all visitors found in registrations
+	 */
 	public List<Visitor> findAllVisitors(List<Registration> registrations) {
 		
 		List<Visitor> visitors = new ArrayList<Visitor>();
@@ -71,6 +77,10 @@ public class ReportGenerationService {
 		return visitors;
 	}
 
+	/**
+	 * @param parkid a National Park is
+	 * @return a VisitorReport
+	 */
 	public VisitorReport makeVisitorReport(String parkid) {
 
 		List<Registration> registrations = registrationService.findAllByParkId(parkid);

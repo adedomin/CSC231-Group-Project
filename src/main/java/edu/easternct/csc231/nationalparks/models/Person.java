@@ -4,7 +4,7 @@ package edu.easternct.csc231.nationalparks.models;
  * object describing people
  * mainly visitors and park rangers
  */
-public class Person {
+public class Person implements Comparable<Person>{
 
 	protected String first;
 	protected String last;
@@ -28,6 +28,42 @@ public class Person {
 		this.last = last;
 		this.address = address;
 		this.contact = contact;
+	}
+
+	/**
+	 * @return true if first and last are equal
+	 */
+	public boolean equals(Person person) {
+	
+		if ((this.first == null || this.last == null) ||
+			(person.getFirst() == null || person.getLast() == null)) {
+			return false;
+		}
+
+		if (this.first.equals(person.getFirst()) &&
+			this.last.equals(person.getLast())) {
+			return true;
+		}
+			
+		return false;
+	}
+
+	/**
+	 * compare by first, first
+	 * if first is equal, compare by last
+	 */
+	public int compareTo(Person person) {
+		
+		if ((this.first == null || this.last == null) ||
+			(person.getFirst() == null || person.getLast() == null)) {
+			return 0;
+		}
+
+		if (this.first.compareTo(person.getFirst()) == 0) {
+			return this.first.compareTo(person.getLast());
+		}
+
+		return this.first.compareTo(person.getFirst());
 	}
 
 	/**

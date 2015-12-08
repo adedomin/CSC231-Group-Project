@@ -11,7 +11,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
  * name, location, etc
  */
 @Document
-public class NationalPark {
+public class NationalPark implements Comparable<NationalPark> {
 
 	@Id
 	private String id;
@@ -42,6 +42,18 @@ public class NationalPark {
 		this.contact = contact;
 		LeadRanger = leadRanger;
 		this.registrationSites = registrationSites;
+	}
+
+	public boolean equals(NationalPark park) {
+		if (this.id == null || park.getId() == null) {
+			return this.name.equals(park.getName());
+		}
+
+		return this.id.equals(park.getId());
+	}
+
+	public int compareTo(NationalPark park) {
+		return this.name.compareTo(park.getName());
 	}
 
 	/**

@@ -5,7 +5,8 @@ import java.util.List;
 import edu.easternct.csc231.nationalparks.models.Visitor;
 
 /**
- *
+ * A report that displays all
+ * unique visitors yesterday
  */
 public class VisitorReport {
 
@@ -34,24 +35,10 @@ public class VisitorReport {
 	}
 
 	/**
-	 * @param name the name to set
-	 */
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	/**
 	 * @return the visitors
 	 */
 	public List<Visitor> getVisitors() {
 		return visitors;
-	}
-
-	/**
-	 * @param visitors the visitors to set
-	 */
-	public void setVisitors(List<Visitor> visitors) {
-		this.visitors = visitors;
 	}
 
 	/**
@@ -62,23 +49,9 @@ public class VisitorReport {
 	}
 
 	/**
-	 * @param visitorCount the visitorCount to set
-	 */
-	public void setVisitorCount(int visitorCount) {
-		this.visitorCount = visitorCount;
-	}
-
-	/**
 	 * @return the yesterdayCount
 	 */
 	public int getYesterdayCount() {
 		return yesterdayCount;
-	}
-
-	/**
-	 * @param yesterdayCount the yesterdayCount to set
-	 */
-	public void setYesterdayCount(int yesterdayCount) {
-		this.yesterdayCount = yesterdayCount;
 	}
 }

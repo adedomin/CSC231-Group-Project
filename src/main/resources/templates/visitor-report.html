@@ -19,13 +19,13 @@
 					Visitors yesterday: <span th:text="${report.yesterdayCount}">596</span>
 				</p>
 				<div>
-					<div th:each="visitor : ${report.visitors}">
-						<table class="table table-striped text-right">
-							<tr>
-								<td th:text="${visitor.id}">id</td>
-								<td th:text="${visitor.first}">first</td>
-								<td th:text="${visitor.last}">last</td>
-								<td><a href="/" th:href="@{/api/v1/visitor/get/} + ${visitor.id}">More Info</a></td>
+					<div>
+						<table class="table table-bordered table-condensed table-striped">
+							<tr class="span12" th:each="visitor : ${report.visitors}">
+								<td class="span3" th:text="${visitor.id}">id</td>
+								<td class="span3" th:text="${visitor.first}">first</td>
+								<td class="span3" th:text="${visitor.last}">last</td>
+								<td class="span3"><a href="/" th:href="@{/api/v1/visitor/get/} + ${visitor.id}">More Info</a></td>
 							</tr>
 						</table>
 					</div>
