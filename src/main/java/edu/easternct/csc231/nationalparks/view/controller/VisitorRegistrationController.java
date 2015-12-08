@@ -31,6 +31,7 @@ public class VisitorRegistrationController {
 	 */
 	@RequestMapping(value="/register",method=RequestMethod.GET)
 	public String registerGet(Model model) {
+
 		model.addAttribute("visitor", new Visitor());
 		return "forms/register";
 	}
@@ -54,6 +55,7 @@ public class VisitorRegistrationController {
 	 */
 	@RequestMapping(value="/register",method=RequestMethod.POST)
 	public String registerPost(@ModelAttribute Visitor visitor, HttpSession session) {
+
 		visitorService.saveVisitor(visitor);
 		session.setAttribute("visitorId", visitor.getId());
 		return "redirect:/";

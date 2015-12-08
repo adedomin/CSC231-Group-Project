@@ -1,5 +1,7 @@
 package edu.easternct.csc231.nationalparks.models;
 
+import java.util.List;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -18,6 +20,7 @@ public class NationalPark {
 	private Address address;
 	private Contact contact;
 	private Person LeadRanger;
+	private List<String> registrationSites;
 
 	/**
 	 * empty
@@ -30,12 +33,15 @@ public class NationalPark {
 	 * @param address
 	 * @param contact
 	 * @param leadRanger
+	 * @param registrationSites
 	 */
-	public NationalPark(String name, Address address, Contact contact, Person leadRanger) {
+	public NationalPark(String name, Address address, Contact contact, Person leadRanger,
+		List<String> registrationSites) {
 		this.name = name;
 		this.address = address;
 		this.contact = contact;
 		LeadRanger = leadRanger;
+		this.registrationSites = registrationSites;
 	}
 
 	/**
@@ -106,5 +112,19 @@ public class NationalPark {
 	 */
 	public void setLeadRanger(Person leadRanger) {
 		LeadRanger = leadRanger;
+	}
+
+	/**
+	 * @return the registrationSites
+	 */
+	public List<String> getRegistrationSites() {
+		return registrationSites;
+	}
+
+	/**
+	 * @param registrationSites the registrationSites to set
+	 */
+	public void setRegistrationSites(List<String> registrationSites) {
+		this.registrationSites = registrationSites;
 	}
 }

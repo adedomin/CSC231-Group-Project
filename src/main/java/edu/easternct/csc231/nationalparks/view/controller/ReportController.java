@@ -18,6 +18,7 @@ public class ReportController {
 	 */
 	@RequestMapping(value="/report/rating/{id}",method=RequestMethod.GET)
 	public String ratingReport(@PathVariable String id) {
+
 		return "redirect:/";
 	}
 
@@ -28,6 +29,7 @@ public class ReportController {
 	 */
 	@RequestMapping(value="/report/visitor/{id}",method=RequestMethod.GET)
 	public String visitorReport(@PathVariable String id) {
+
 		return "redirect:/";
 	}
 }

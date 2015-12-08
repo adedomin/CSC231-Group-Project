@@ -1,10 +1,11 @@
 package edu.easternct.csc231.nationalparks.view.controller;
 
+import java.util.Date;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,6 +31,7 @@ public class RatingRegistrationController {
 	@Autowired
 	public RatingRegistrationController(RegistrationService registrationService,
 			NationalParkService nationalParkService) {
+
 		this.registrationService = registrationService;
 		this.nationalParkService = nationalParkService;
 	}
@@ -43,9 +45,15 @@ public class RatingRegistrationController {
 	 */
 	@RequestMapping(value="/rate-park/{id}",method=RequestMethod.GET)
 	public String rateGet(@PathVariable String id, 
-			ModelMap model) {
+			ModelMap model, HttpSession session) {
+
+		if (((String) session.getAttribute("visitorId")) == null) {
+			return "redirect:/register";
+		}
+
 		model.addAttribute("rating", new Registration());
 		model.addAttribute("park", id);
+		model.addAttribute("sites", nationalParkService.findById(id).getRegistrationSites());
 		return "forms/rate-park";
 	}
 
@@ -59,6 +67,13 @@ public class RatingRegistrationController {
 	@RequestMapping(value="/rate-park/{id}",method=RequestMethod.POST)
 	public String ratePost(@PathVariable String id,
 			Registration registration, HttpSession session) {
+
+		if (((String) session.getAttribute("visitorId")) == null) {
+			return "redirect:/register";
+		}
+
+		registration.setDate(new Date());
+		registration.setOnCloud(true);
 		registration.setVisitorId((String)session.getAttribute("visitorId"));
 		registration.setParkId(id);
 		registrationService.saveRegistration(registration);
