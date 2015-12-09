@@ -2,9 +2,7 @@ Final, contribution By Anthony DeDominic
 
 Being the Project Lead I generally had the roles of dictating the overall design and goals of the project.
 Part of those responsibilities had me review code from my team members.
-
 I also found myself offering advice to my team members on how to do things, such as letting Eclipse generate the getters and setters.
-
 In terms of programming, I was generally responsible for all the Web (GUI) centric code, including the XHTML templates. I also wrote all the services which offered up persistently stored database objects such as national parks, visitors, etc.
 
-I also made up the UML class diagram.
+I handled the UML diagram.

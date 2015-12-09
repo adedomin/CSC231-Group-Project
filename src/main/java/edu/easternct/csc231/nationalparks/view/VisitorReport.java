@@ -7,7 +7,7 @@ import edu.easternct.csc231.nationalparks.models.Visitor;
 
 /**
  * A report that displays all
- * unique visitors yesterday
+ * unique visitors
  */
 public class VisitorReport {
 
