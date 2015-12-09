@@ -40,6 +40,10 @@ Controller RatingRegistrationController
 
 	GET (parkId):
 
+		if session attribute visitorId does not exist
+
+			redirect to /register
+
 		add a model attribute with key "registration" with value new Registration()
 		add a model attribute with key "park" with value parkId
 		
@@ -47,8 +51,13 @@ Controller RatingRegistrationController
 	
 	POST (registration, parkId):
 
+		if session attribute visitorId does not exist
+
+			redirect to /register
+
 		registration.visitorId := get session value associated key "visitorId"
 		registration.parkId := parkId
+		registration.date := current date and time
 
 		RegistrationService.saveRegistration registration
 
@@ -68,7 +77,7 @@ Object RatingReport (registrations)
 		sort(registrations)
 
 Object VisitorReport (visitors)
-
+	
 	sort (visitors)
 
 @Register Controller to url path “/report/{type}/{parkId}”
@@ -94,7 +103,11 @@ Controller ReportController
 
 		visitors := []
 		for each registration in registrations
-			visitor := get visitor from VisitorService.findById(registration.visitorId)
+			if (registration.visitorId in visitors)
+				
+				continue
+
+			visitors.add(get visitor from VisitorService.findById(registration.visitorId))
 
 		set model attribute with key "report" with value new VisitorReport(visitors)
 

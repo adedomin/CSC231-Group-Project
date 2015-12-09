@@ -7,7 +7,7 @@ for CSC231 Group Project
 
 Dependencies - not Maven Resolvable:
 
- *Mongo DB
+ * Mongo DB
 
 this app will fail to fucntion without a locally running instance of Mongo DB.
 Made available is test data which includes three parks, some registrations and some visitor objects
