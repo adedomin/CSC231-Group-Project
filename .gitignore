@@ -1,5 +1,4 @@
 target/
-db-additions/
 .mvn/
 .classpath
 .project

@@ -16,6 +16,8 @@ import edu.easternct.csc231.nationalparks.view.VisitorReport;
 
 /**
  * returns a new RatingReport or VisitorReport object
+ *
+ * @author Anthony DeDominic
  */
 @Service
 public class ReportGenerationService {

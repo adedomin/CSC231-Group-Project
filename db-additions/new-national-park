@@ -1,0 +1,38 @@
+POST http://localhost:8080/api/v1/national-park/new
+Content-Type: application/json
+{
+	"name":"Grand Canyon",
+	"registrationSites" : [
+		"Guano Point",
+		"South Rim",
+		"North Rim",
+		"Mohave Point",
+		"South Kaibab Trail"
+	],
+	"address": {
+		"street":"a street",
+		"city":"a city",
+		"state":"Arizona",
+		"zip":"a zip"
+	},
+	"contact": {
+		"phone":"a phone",
+		"email":"a email"
+	},
+	"leadRanger": {
+		"first":"a firstname",
+		"last":"a lastname",
+		"address": {
+			"street":"a street",
+			"city":"a city",
+			"state":"a state",
+			"zip":"a zip"
+		},
+		"contact": {
+			"phone":"a phone",
+			"email":"a email"
+		}
+	}
+}
+
+GET http://localhost:8080/

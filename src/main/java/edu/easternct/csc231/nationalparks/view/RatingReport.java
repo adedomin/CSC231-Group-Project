@@ -86,7 +86,9 @@ public class RatingReport {
 	 *         and their average ratings
 	 */
 	private Map<String,AvgNode> getSiteAvg(List<Registration> registrations) {
+
 		Map<String,AvgNode> map = new TreeMap<String,AvgNode>();
+
 		for (Registration registration : registrations) {
 
 			if (registration.getName() == null) {

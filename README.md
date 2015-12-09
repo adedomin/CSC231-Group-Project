@@ -12,4 +12,4 @@ Dependencies - not Maven Resolvable:
 this app will fail to fucntion without a locally running instance of Mongo DB.
 Made available is test data which includes three parks, some registrations and some visitor objects
 
-
+to load the example data, see the README in ./db-additions
