@@ -2,6 +2,8 @@ package edu.easternct.csc231.nationalparks.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -64,13 +66,18 @@ public class ReportGenerationService {
 	public List<Visitor> findAllVisitors(List<Registration> registrations) {
 		
 		List<Visitor> visitors = new ArrayList<Visitor>();
+		Map<String,Boolean> visMap = new TreeMap<String,Boolean>();
 
 		for (Registration registration : registrations) {
 			if (registration.getVisitorId() != null) {
-				Visitor visitor = visitorService.findById(registration.getVisitorId());
-				if (visitor != null) {
-					visitors.add(visitor);
-				}
+				visMap.put(registration.getVisitorId(),true);
+			}
+		}
+
+		for (Map.Entry<String,Boolean> id : visMap.entrySet()) {
+			Visitor visitor = visitorService.findById(id.getKey());
+			if (visitor != null) {
+				visitors.add(visitor);
 			}
 		}
 
