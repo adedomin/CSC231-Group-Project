@@ -1,0 +1,10 @@
+<map id="G" name="G">
+<area shape="rect" id="node1_0" href="./ReportGenerationService.html" title="edu.easternct.csc231.nationalparks.service.ReportGenerationService" alt="" coords="16,11,871,173"/>
+<area shape="rect" id="node1" href="./ReportGenerationService.html" title="&lt;TABLE&gt;" alt="" coords="5,5,881,179"/>
+<area shape="rect" id="node2_1" href="./RegistrationService.html" title="edu.easternct.csc231.nationalparks.service.RegistrationService" alt="" coords="917,19,1231,165"/>
+<area shape="rect" id="node2" href="./RegistrationService.html" title="&lt;TABLE&gt;" alt="" coords="906,14,1242,170"/>
+<area shape="rect" id="node3_2" href="./NationalParkService.html" title="edu.easternct.csc231.nationalparks.service.NationalParkService" alt="" coords="1277,28,1508,156"/>
+<area shape="rect" id="node3" href="./NationalParkService.html" title="&lt;TABLE&gt;" alt="" coords="1267,23,1519,161"/>
+<area shape="rect" id="node4_3" href="./VisitorService.html" title="edu.easternct.csc231.nationalparks.service.VisitorService" alt="" coords="1554,28,1826,156"/>
+<area shape="rect" id="node4" href="./VisitorService.html" title="&lt;TABLE&gt;" alt="" coords="1543,23,1837,161"/>
+</map>

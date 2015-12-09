@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node1_0" href="./RegistrationController.html" title="edu.easternct.csc231.nationalparks.models.controller.RegistrationController" alt="" coords="16,11,337,156"/>
+<area shape="rect" id="node1" href="./RegistrationController.html" title="&lt;TABLE&gt;" alt="" coords="5,5,348,161"/>
+<area shape="rect" id="node2_1" href="./VisitorController.html" title="edu.easternct.csc231.nationalparks.models.controller.VisitorController" alt="" coords="383,19,722,147"/>
+<area shape="rect" id="node2" href="./VisitorController.html" title="&lt;TABLE&gt;" alt="" coords="373,14,733,153"/>
+<area shape="rect" id="node3_2" href="./NationalParkController.html" title="edu.easternct.csc231.nationalparks.models.controller.NationalParkController" alt="" coords="768,19,999,147"/>
+<area shape="rect" id="node3" href="./NationalParkController.html" title="&lt;TABLE&gt;" alt="" coords="757,14,1009,153"/>
+</map>

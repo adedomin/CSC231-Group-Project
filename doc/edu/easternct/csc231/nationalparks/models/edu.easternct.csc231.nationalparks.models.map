@@ -1,0 +1,14 @@
+<map id="G" name="G">
+<area shape="rect" id="node1_0" href="./Visitor.html" title="edu.easternct.csc231.nationalparks.models.Visitor" alt="" coords="16,475,548,672"/>
+<area shape="rect" id="node1" href="./Visitor.html" title="&lt;TABLE&gt;" alt="" coords="5,469,559,677"/>
+<area shape="rect" id="node2_1" href="./NationalPark.html" title="edu.easternct.csc231.nationalparks.models.NationalPark" alt="" coords="551,45,1279,381"/>
+<area shape="rect" id="node2" href="./NationalPark.html" title="&lt;TABLE&gt;" alt="" coords="541,40,1290,387"/>
+<area shape="rect" id="node3_2" href="./Registration.html" title="edu.easternct.csc231.nationalparks.models.Registration" alt="" coords="1325,11,2063,416"/>
+<area shape="rect" id="node3" href="./Registration.html" title="&lt;TABLE&gt;" alt="" coords="1315,5,2073,421"/>
+<area shape="rect" id="node4_3" href="./Contact.html" title="edu.easternct.csc231.nationalparks.models.Contact" alt="" coords="2108,132,2360,295"/>
+<area shape="rect" id="node4" href="./Contact.html" title="&lt;TABLE&gt;" alt="" coords="2097,127,2371,300"/>
+<area shape="rect" id="node5_4" href="./Address.html" title="edu.easternct.csc231.nationalparks.models.Address" alt="" coords="2405,97,2801,329"/>
+<area shape="rect" id="node5" href="./Address.html" title="&lt;TABLE&gt;" alt="" coords="2395,92,2812,335"/>
+<area shape="rect" id="node6_5" href="./Person.html" title="edu.easternct.csc231.nationalparks.models.Person" alt="" coords="59,54,505,373"/>
+<area shape="rect" id="node6" href="./Person.html" title="&lt;TABLE&gt;" alt="" coords="48,49,516,378"/>
+</map>
