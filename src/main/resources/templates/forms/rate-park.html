@@ -16,8 +16,8 @@
 				<form action="/" th:action="@{/rate-park/__${park}__}" th:object="${rating}" method="post">
 					<div class="form-group">
 						<label class="form-group">
-							<select th:each="site : ${sites}">
-								<option value="site" th:field="*{name}" th:value="${site}" th:text="${site}">site</option>
+							<select th:field="*{name}">
+								<option value="site" th:each="site : ${sites}" th:value="${site}" th:text="${site}">site</option>
 							</select>
 						</label>
 					</div>

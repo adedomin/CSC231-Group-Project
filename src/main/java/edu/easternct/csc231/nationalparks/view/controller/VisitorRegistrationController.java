@@ -56,6 +56,7 @@ public class VisitorRegistrationController {
 	@RequestMapping(value="/register",method=RequestMethod.POST)
 	public String registerPost(@ModelAttribute Visitor visitor, HttpSession session) {
 
+		visitor.setId(null);
 		visitorService.saveVisitor(visitor);
 		session.setAttribute("visitorId", visitor.getId());
 		return "redirect:/";

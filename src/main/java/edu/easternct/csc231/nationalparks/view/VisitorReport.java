@@ -1,5 +1,6 @@
 package edu.easternct.csc231.nationalparks.view;
 
+import java.util.Collections;
 import java.util.List;
 
 import edu.easternct.csc231.nationalparks.models.Visitor;
@@ -23,6 +24,7 @@ public class VisitorReport {
 
 		this.name = name;
 		this.visitors = visitors;
+		Collections.sort(this.visitors);
 		this.yesterdayCount = visitors.size();
 		this.visitorCount = yesterdayCount;
 	}

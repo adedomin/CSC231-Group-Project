@@ -9,11 +9,19 @@
 </head>
 <body>
 	<div th:include="partials/header"></div>
-	<div th:each="park : ${parks}" class="inline-boxes">
-		<h2 th:text="${park.name}">A Park</h2>
-		<a class="btn btn-default" href="/" th:href="@{/report/rating/} + ${park.id}" role="button">Rating Report</a>	
-		<a class="btn btn-default" href="/" th:href="@{/report/visitor/} + ${park.id}" role="button">Visitor Report</a>	
-		<a class="btn btn-default" href="/" th:href="@{/rate-park/} + ${park.id}" role="button">Rate Park</a>	
+	<div class="container">
+		<div class="row">	
+			<div class="col-md-10 col-md-offset-2">
+				<div th:each="park : ${parks}" class="inline-boxes">
+					<h2 th:text="${park.name}">A Park</h2>
+					<a href="/" th:href="@{/api/v1/national-park/get/} + ${park.id}" role="button">Info</a>	
+					<br />
+					<a class="btn btn-default" href="/" th:href="@{/report/rating/} + ${park.id}" role="button">Rating Report</a>	
+					<a class="btn btn-default" href="/" th:href="@{/report/visitor/} + ${park.id}" role="button">Visitor Report</a>	
+					<a class="btn btn-default" href="/" th:href="@{/rate-park/} + ${park.id}" role="button">Rate Park</a>	
+				</div>
+			</div>
+		</div>
 	</div>
 	<div th:include="partials/footer"></div>
 </body>

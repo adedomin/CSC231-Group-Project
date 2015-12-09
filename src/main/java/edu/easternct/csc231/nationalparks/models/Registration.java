@@ -75,17 +75,14 @@ public class Registration implements Comparable<Registration>{
 	 */
 	public int compareTo(Registration registration) {
 			
-		if (this.date.compareTo(registration.getDate()) == 0) {
-			if (this.name.compareTo(registration.getName()) == 0) {
-				return Integer.compare(this.rating,registration.getRating());
-			}
-			else {
-				return this.name.compareTo(registration.getName());
-			}
+		if (this.date.compareTo(registration.getDate()) == -1) {
+			return 1;
 		}
-		else {
-			return this.date.compareTo(registration.getDate());
+		else if (this.date.compareTo(registration.getDate()) == 1) {
+			return -1;
 		}
+
+		return 0;
 	}
 
 	/**
